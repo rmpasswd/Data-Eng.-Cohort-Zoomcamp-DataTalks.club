@@ -27,12 +27,28 @@ To easily connect to the GCP VM from Vscode:
 from this guide: https://learn.canceridc.dev/cookbook/virtual-machines/using-vs-code-with-gcp-vms  
 install the gcp cli: https://cloud.google.com/sdk/docs/install  
 Check that gcloud path has been added to windows environment 'path' variable: C:\Program Files (x86)\Google\Cloud SDK\google-cloud-sdk\bin  
-We unchecked 'install python'  
-Add another environent variable '' to add our existing python installed path(run `where python` in cmd)  
+I unchecked 'install python'.
+So add another environent variable '' to add our existing python installed path(run `where python` in cmd)  
 ![image](https://github.com/user-attachments/assets/6ef856bb-737a-409c-8e6c-7486b66501a5)  
 If you type in gcloud in your vscode's terminal(ctrl+`), it wont work, need to restart vscode itself.  
 ![image](https://github.com/user-attachments/assets/3e0e17ab-bbfd-4842-8584-71cbe4c2da03)  
 A new entry has been made:  
 ![image](https://github.com/user-attachments/assets/6c96f18e-3c52-41bd-9032-9cc6ffc3ab1d)  
-.
+But on clicking connect and choosing 'linux' this error:  
+![image](https://github.com/user-attachments/assets/3b766fa1-1590-49d6-9617-405cdb12adaf)
+
+
+(Need to run `gcloud compute config-ssh` after restarting gcp instance.)  
+
+**Alternate:**
+Above easy step install 600MB+ gcp cli, instead generate an ssh config file yourself.  
+in windows terminal:  `ssh-keygen -t rsa -f "C:\Users\Ahmad Mahin\.ssh\GCP_keygen" -C mahin_stu2017`  
+Copy the contents of .pub file 
+Then in GCP, go here:  
+![image](https://github.com/user-attachments/assets/37bb3a5c-5123-4e58-8ad0-24d930f1d0b0)  
+click add, paste and click 'save' below.
+
+
+
+
 
