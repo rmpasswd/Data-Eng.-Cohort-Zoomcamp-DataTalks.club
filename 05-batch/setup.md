@@ -1,4 +1,4 @@
-## Linux ft. GCP
+## Linux ft. GCP and VSCode on Windows :)
 
 Turn on GCP VM Instance, then SSH and run commands:
 ```
@@ -40,15 +40,48 @@ But on clicking connect and choosing 'linux' this error:
 
 (Need to run `gcloud compute config-ssh` after restarting gcp instance.)  
 
-**Alternate:**
-Above easy step install 600MB+ gcp cli, instead generate an ssh config file yourself.  
-in windows terminal:  `ssh-keygen -t rsa -f "C:\Users\Ahmad Mahin\.ssh\GCP_keygen" -C mahin_stu2017`  
-Copy the contents of .pub file 
-Then in GCP, go here:  
+.  
+<br>
+<br>
+<br>
+
+#### **Alternate:**  
+Above easy step needs to  install 600MB+ gcp cli, instead generate an ssh config file yourself.  
+- in windows terminal:  `ssh-keygen -t rsa -f "C:\Users\Ahmad Mahin\.ssh\GCP_keygen" -C mahin_stu2017`  
+- Copy the contents of .pub file 
+- Then in GCP, go here:  
 ![image](https://github.com/user-attachments/assets/37bb3a5c-5123-4e58-8ad0-24d930f1d0b0)  
-click add, paste and click 'save' below.
+- click add, paste and click 'save' below.
 
+ 
+- Compose a ssh **config** file, in windows, make a file in `C:\Users\Ahmad Mahin\.ssh\config`
+    
+    ```python
+    
+    Host gcp-manual-ssh
+        HostName 34.143.199.1
+        User mahin_stu2017
+        port 22
+        IdentityFile "C:\Users\Ahmad Mahin\.ssh\GCP_keygen"
+        
+    ```
+    
+    - Host: just an alias.  
+    - HostName: taken from here:  
+        
+      ![image](https://github.com/user-attachments/assets/bac5f03d-6ab5-4c9e-94c6-c2174c662dcd)
 
+        
+    - User: refers to the user inside the VM:  
+        
+       ![image 1](https://github.com/user-attachments/assets/4e9c6649-6f46-47db-9c85-07b05438e9dc)
 
-
+        
+    - IdentityFile: the private key when generated from ssh-keygen command  
+    
+    - Save, you can later access this file from here:  
+    ![image](https://github.com/user-attachments/assets/4cc8a7c9-eee0-4dbe-b132-8dc1cb2ee8d6)
+        
+    - Use either of these 2 buttons to connect:  
+    ![image](https://github.com/user-attachments/assets/c062c8f3-a0b2-4284-b2ad-7395c2c4a2f0)
 
