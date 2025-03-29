@@ -85,3 +85,6 @@ Above easy step needs to  install 600MB+ gcp cli, instead generate an ssh config
     - Use either of these 2 buttons to connect:  
     ![image](https://github.com/user-attachments/assets/c062c8f3-a0b2-4284-b2ad-7395c2c4a2f0)
 
+  **TroubleShooting**
+  If you see 'permission denied' error, then check if the VM ip changed or copy the .pub file into GCP > Metadata > Add SSH Key _again_
+  
